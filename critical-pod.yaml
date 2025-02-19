@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: critical-pod
+  namespace: eviction-lab
+spec:
+  priorityClassName: high-priority
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      limits:
+        memory: "500Mi"
+      requests:
+        memory: "200Mi"
